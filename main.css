@@ -127,7 +127,7 @@ body {
     font-weight: 600;
 }
 
-/* Hover & Interactive Effects */
+/* Hover Effects */
 .discord:hover {
     background: rgba(88, 101, 242, 0.15);
     border-color: #5865F2;
@@ -152,61 +152,69 @@ body {
     margin: 25px 0;
 }
 
-/* Best Friends Styles */
-.friends-section {
+/* Main Outer Best Friends Box Container */
+.friends-container-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 20px 15px;
     text-align: center;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.01);
 }
 
+/* Title Layout */
 .friends-title {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #fff;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    letter-spacing: 0.5px;
 }
 
-/* Animated Custom Heart Size */
+/* Icon Size styling */
 .custom-heart-icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
-/* Square Blocks Setup */
+/* Squares grid format under the title */
 .friends-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Perfect columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 clean rows */
     gap: 12px;
 }
 
+/* Individual Friend Squares */
 .friend-square {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    aspect-ratio: 1 / 1; /* Forces it to stay a perfect square */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1 / 1; /* Makes them distinct square shapes */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #e0e0e0;
-    transition: all 0.3s ease;
+    color: #d8d8d8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 5px;
-    word-break: break-word; /* Prevents long names from breaking layout */
+    word-break: break-word;
 }
 
 .friend-square:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
 }
 
-/* Entry Animation */
+/* Fade animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
