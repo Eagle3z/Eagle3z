@@ -12,11 +12,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-y: auto; /* Changed to allow scrolling on mobile if card gets tall */
+    overflow-x: hidden;
     color: #fff;
+    padding: 20px 0;
 }
 
-/* Background Setup (Replace URL with your desired background image) */
+/* Background Setup */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -38,14 +40,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px 30px;
     border-radius: 20px;
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 420px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Logo Styling (Replace URL in HTML with your logo) */
+/* Logo Styling */
 .logo-container {
     margin-bottom: 20px;
 }
@@ -142,7 +144,62 @@ body {
 }
 .tiktok i { color: #fe2c55; }
 
-/* Entry Animation */
+/* Section Divider */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    margin: 25px 0;
+}
+
+/* Best Friends Styles */
+.friends-section {
+    text-align: left;
+}
+
+.friends-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #eaeaea;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.friends-title i {
+    color: #ff4757;
+    font-size: 0.9rem;
+    animation: heartbeat 1.5s infinite alternate;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.friend-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    color: #d1d1d1;
+    transition: all 0.3s ease;
+}
+
+.friend-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+/* Entry Animation & Heartbeat */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -152,4 +209,9 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes heartbeat {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
 }
