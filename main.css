@@ -1,0 +1,172 @@
+/* إعدادات الخطوط والألوان الأساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: #060d0d; /* لون زيتي داكن جداً وقريب للأسود */
+    color: #ffffff;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* --- شريط التنقل (Navbar) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(6, 13, 13, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #00ffcc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    border: 2px solid #00ffcc;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #8fa0a0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #00ffcc;
+}
+
+.nav-links a.active {
+    border: 1px solid #00ffcc;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(0, 255, 204, 0.05);
+}
+
+.lang-switch {
+    font-family: sans-serif; /* لظهور الحروف العربية بشكل صحيح */
+}
+
+/* --- القسم الرئيسي والخلفيات العلامات المائية --- */
+.hero-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at center, #0a1b1b 0%, #060d0d 100%);
+}
+
+/* العلامات المائية الخلفية الكبيرة */
+.bg-watermark {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(255, 255, 255, 0.02); /* شفافة جداً ومدمجة */
+    user-select: none;
+    line-height: 0.9;
+    font-weight: 900;
+}
+
+.left-wm {
+    font-size: 25rem;
+    left: -5%;
+    bottom: 10%;
+    transform: rotate(-15deg);
+    color: rgba(0, 255, 204, 0.015);
+}
+
+.right-wm {
+    font-size: 14rem;
+    right: 2%;
+    bottom: 5%;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.01);
+}
+
+/* --- محتوى الهوية الشخصية --- */
+.main-content {
+    text-align: center;
+    z-index: 10;
+}
+
+/* الشعار الدائري المضيء */
+.avatar-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #0b1616;
+    border: 4px solid #00ffcc;
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+    margin: 0 auto 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    transform: rotate(-5deg); /* مائلة قليلاً مثل نمط الجرافيتي بالصورة */
+}
+
+/* النص المضيء المتوهج (Neon text) */
+.brand-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: #c7fffd;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.6), 
+                 0 0 30px rgba(0, 255, 204, 0.3);
+    margin-bottom: 15px;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    color: #a0b0b0;
+    letter-spacing: 1px;
+}
+
+/* التجاوب مع الشاشات الصغيرة (الهواتف) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .brand-title {
+        font-size: 2.5rem;
+    }
+    .left-wm, .right-wm {
+        display: none; /* إخفاء الكلمات الخلفية الكبيرة في الهواتف لمنع التشويه */
+    }
+}
