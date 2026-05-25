@@ -8,14 +8,14 @@
 
 body {
     background-color: #0b0b0b;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto; /* Changed to allow scrolling on mobile if card gets tall */
+    overflow-y: auto;
     overflow-x: hidden;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 /* Background Setup */
@@ -28,7 +28,7 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
                 url('https://media.discordapp.net/attachments/1195423167490039880/1508469074378887288/IMG_1832.jpg?ex=6a15a6cd&is=6a14554d&hm=615d78e15fa8eda9e8a5cf3e93dee4bbdc6512b99a17e982386ce4da92784e56&=&format=webp&width=1104&height=663') no-repeat center center/cover;
     filter: blur(8px);
-    transform: scale(1.1); /* Prevents white edges from blur */
+    transform: scale(1.1);
     z-index: -1;
 }
 
@@ -39,11 +39,11 @@ body {
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px 30px;
-    border-radius: 20px;
+    border-radius: 24px;
     width: 90%;
     max-width: 420px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -92,10 +92,10 @@ body {
 .social-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 20px;
-    border-radius: 12px;
+    padding: 14px 20px;
+    border-radius: 14px;
     text-decoration: none;
     color: #fff;
     transition: all 0.3s ease;
@@ -103,7 +103,7 @@ body {
 }
 
 .social-box i {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-right: 15px;
     width: 30px;
     text-align: center;
@@ -148,58 +148,65 @@ body {
 .section-divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
     margin: 25px 0;
 }
 
 /* Best Friends Styles */
 .friends-section {
-    text-align: left;
+    text-align: center;
 }
 
 .friends-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #eaeaea;
-    margin-bottom: 12px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 }
 
-.friends-title i {
-    color: #ff4757;
-    font-size: 0.9rem;
-    animation: heartbeat 1.5s infinite alternate;
+/* Animated Custom Heart Size */
+.custom-heart-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
 }
 
+/* Square Blocks Setup */
 .friends-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Perfect columns */
+    gap: 12px;
 }
 
-.friend-tag {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-    color: #d1d1d1;
+.friend-square {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    aspect-ratio: 1 / 1; /* Forces it to stay a perfect square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e0e0e0;
     transition: all 0.3s ease;
+    padding: 5px;
+    word-break: break-word; /* Prevents long names from breaking layout */
 }
 
-.friend-tag:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+.friend-square:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.25);
     color: #fff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
 }
 
-/* Entry Animation & Heartbeat */
+/* Entry Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -209,9 +216,4 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes heartbeat {
-    from { transform: scale(1); }
-    to { transform: scale(1.15); }
 }
