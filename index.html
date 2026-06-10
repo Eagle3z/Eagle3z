@@ -3,59 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝐌𝐭𝐱 ✘</title>
+    <title>Empire of Division X - Staff Panel</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="background-overlay"></div>
+    <!-- Login Screen -->
+    <div id="loginPage" class="login-container">
+        <div class="login-box">
+            <h1>Empire of Division X</h1>
+            <h3>Admin Login</h3>
 
-    <div class="profile-card">
-        <div class="logo-container">
-            <img src="https://media.discordapp.net/attachments/1195423167490039880/1508468606206349382/IMG_1829.jpg?ex=6a15a65d&is=6a1454dd&hm=d79bee28aac764e99e498cdb248d408558f79d4d3eec1b9bf1140b2bbb1884c8&=&format=webp&width=1610&height=1610" alt="Logo" class="profile-logo">
-        </div>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
 
-        <h1 class="profile-name">𝐌𝐭𝐱 ✘</h1>
+            <button onclick="login()">Login</button>
 
-        <p class="profile-bio">Eagle3z Or 𝐌𝐭𝐱 ✘</p>
-
-        <div class="social-links">
-            <div class="social-box discord">
-                <i class="fab fa-discord"></i>
-                <div class="social-info">
-                    <span class="platform">Discord</span>
-                    <span class="username">1awh</span>
-                </div>
-            </div>
-
-            <a href="https://www.tiktok.com/@ifhm" target="_blank" class="social-box tiktok">
-                <i class="fab fa-tiktok"></i>
-                <div class="social-info">
-                    <span class="platform">TikTok</span>
-                    <span class="username">Eagle3z</span>
-                </div>
-            </a>
-        </div>
-
-        <hr class="section-divider">
-
-        <div class="friends-container-box">
-            <h2 class="friends-title">
-                <img src="https://cdn.discordapp.com/emojis/1399190111383457984.webp?size=160&animated=true" alt="heart-icon" class="custom-heart-icon"> 
-                Best Friends
-            </h2>
-            
-            <div class="friends-grid">
-                <div class="friend-square">Null</div>
-                <div class="friend-square">Yx1</div>
-                <div class="friend-square">Bu7amad</div>
-                <div class="friend-square">Bu moza</div>
-                <div class="friend-square">Reacher</div>
-                <div class="friend-square">Ma</div>
-            </div>
+            <p id="error"></p>
         </div>
     </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+
+        <header>
+            <h1>Empire of Division X Staff Management</h1>
+            <button class="logout" onclick="logout()">Logout</button>
+        </header>
+
+        <div class="container">
+
+            <!-- Roles -->
+            <div class="roles">
+
+                <h2>Staff Roles</h2>
+
+                <div class="role owner">Empire of Division X</div>
+                <div class="role coowner">Best CoOwner</div>
+                <div class="role admin">Administration</div>
+
+                <div class="role-card">
+                    <span>High Command</span>
+                    <span>1</span>
+                </div>
+
+                <div class="role-card">
+                    <span>Console</span>
+                    <span>0</span>
+                </div>
+
+                <div class="role-card">
+                    <span>Vanguard</span>
+                    <span>1</span>
+                </div>
+
+                <div class="role-card">
+                    <span>Ghost</span>
+                    <span>0</span>
+                </div>
+
+            </div>
+
+            <!-- Staff Table -->
+            <div class="table-section">
+
+                <h2>Admins & Responsibilities</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Responsibilities</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>High Command</td>
+                            <td>Manage Staff & Operations</td>
+                            <td class="active">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sarah</td>
+                            <td>Vanguard</td>
+                            <td>Recruitment & Training</td>
+                            <td class="active">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mike</td>
+                            <td>Administration</td>
+                            <td>Moderation & Reports</td>
+                            <td class="active">Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+<script>
+function login() {
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "admin123") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("dashboard").classList.remove("hidden");
+    } else {
+        document.getElementById("error").innerText =
+        "Invalid username or password";
+    }
+}
+
+function logout() {
+    location.reload();
+}
+</script>
 
 </body>
 </html>
