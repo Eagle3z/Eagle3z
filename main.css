@@ -1,227 +1,186 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
 }
 
-body {
-    background-color: #0b0b0b;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-    color: #fff;
-    padding: 40px 0;
+body{
+    background:#0f1117;
+    color:white;
 }
 
-/* Background Setup */
-.background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
-                url('https://media.discordapp.net/attachments/1195423167490039880/1508469074378887288/IMG_1832.jpg?ex=6a15a6cd&is=6a14554d&hm=615d78e15fa8eda9e8a5cf3e93dee4bbdc6512b99a17e982386ce4da92784e56&=&format=webp&width=1104&height=663') no-repeat center center/cover;
-    filter: blur(8px);
-    transform: scale(1.1);
-    z-index: -1;
+/* LOGIN */
+
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-/* Profile Card Container */
-.profile-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    border-radius: 24px;
-    width: 90%;
-    max-width: 420px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 1s ease-in-out;
+.login-box{
+    background:#1a1d26;
+    padding:35px;
+    width:350px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
-/* Logo Styling */
-.logo-container {
-    margin-bottom: 20px;
+.login-box h1{
+    margin-bottom:10px;
+    color:#6aa8ff;
 }
 
-.profile-logo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
+.login-box h3{
+    margin-bottom:20px;
 }
 
-.profile-logo:hover {
-    transform: scale(1.05);
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    background:#2a2e39;
+    border:none;
+    color:white;
+    border-radius:8px;
 }
 
-/* Typography */
-.profile-name {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+.login-box button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#5865f2;
+    border:none;
+    color:white;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-.profile-bio {
-    font-size: 0.9rem;
-    color: #b3b3b3;
-    margin-bottom: 30px;
+.login-box button:hover{
+    background:#4752c4;
 }
 
-/* Social Buttons Grid */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+#error{
+    margin-top:10px;
+    color:#ff5555;
 }
 
-/* Shared Box Style */
-.social-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 14px 20px;
-    border-radius: 14px;
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.hidden{
+    display:none;
 }
 
-.social-box i {
-    font-size: 1.6rem;
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
+/* DASHBOARD */
+
+header{
+    background:#1a1d26;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #2d313d;
 }
 
-.social-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+.logout{
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-.platform {
-    font-size: 0.75rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.container{
+    display:flex;
+    gap:20px;
+    padding:20px;
 }
 
-.username {
-    font-size: 1rem;
-    font-weight: 600;
+/* ROLES */
+
+.roles{
+    width:300px;
+    background:#1a1d26;
+    border-radius:12px;
+    padding:20px;
 }
 
-/* Hover Effects */
-.discord:hover {
-    background: rgba(88, 101, 242, 0.15);
-    border-color: #5865F2;
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
-    transform: translateY(-2px);
-}
-.discord i { color: #5865F2; }
-
-.tiktok:hover {
-    background: rgba(254, 44, 85, 0.15);
-    border-color: #fe2c55;
-    box-shadow: 0 0 15px rgba(254, 44, 85, 0.3);
-    transform: translateY(-2px);
-}
-.tiktok i { color: #fe2c55; }
-
-/* Section Divider */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
-    margin: 25px 0;
+.roles h2{
+    margin-bottom:15px;
 }
 
-/* Main Outer Best Friends Box Container */
-.friends-container-box {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.01);
+.role{
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
-/* Title Layout */
-.friends-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    letter-spacing: 0.5px;
+.owner{
+    background:#24354d;
+    border-left:5px solid #6aa8ff;
 }
 
-/* Icon Size styling */
-.custom-heart-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+.coowner{
+    background:#401818;
+    border-left:5px solid red;
 }
 
-/* Squares grid format under the title */
-.friends-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 clean rows */
-    gap: 12px;
+.admin{
+    background:#2b2b2b;
+    border-left:5px solid gray;
 }
 
-/* Individual Friend Squares */
-.friend-square {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    aspect-ratio: 1 / 1; /* Makes them distinct square shapes */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #d8d8d8;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 5px;
-    word-break: break-word;
+.role-card{
+    background:#242834;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.friend-square:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
-    transform: translateY(-3px);
+.role-card:hover{
+    background:#2e3442;
 }
 
-/* Fade animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* TABLE */
+
+.table-section{
+    flex:1;
+    background:#1a1d26;
+    border-radius:12px;
+    padding:20px;
+}
+
+.table-section h2{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2a2e39;
+    padding:14px;
+    text-align:left;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #2f3442;
+}
+
+tr:hover{
+    background:#222734;
+}
+
+.active{
+    color:#43d17d;
+    font-weight:bold;
 }
